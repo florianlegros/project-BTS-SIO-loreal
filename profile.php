@@ -41,9 +41,8 @@ if (!isset($_SESSION['loggedin'])) {
                 
               </a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link" href="help.html">Aide - FAQ</a>
+                    <a class="nav-link" href="form.php">formulaire</a>
                 </li>
 				<li class="nav-item active">
                     <a class="nav-link" href="profile.php"><i class="fas fa-user-circle"></i>Profile</a>

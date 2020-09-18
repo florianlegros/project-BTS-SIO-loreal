@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Change this to your connection info.
 $DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'loreal';
@@ -20,7 +21,6 @@ if (empty($_POST['rusername']) || empty($_POST['rpassword']) || empty($_POST['re
 	// One or more values are empty.
 	exit('Please complete the registration form');
 }
-// We need to check if the account with that username exists.
 if (!filter_var($_POST['remail'], FILTER_VALIDATE_EMAIL)) {
 	exit('Email is not valid!');
 }
@@ -46,8 +46,27 @@ if ($stmt = $con->prepare('INSERT INTO users (username, password, email) VALUES 
 	$password = password_hash($_POST['rpassword'], PASSWORD_DEFAULT);
 	$stmt->bind_param('sss', $_POST['rusername'], $password, $_POST['remail']);
 	$stmt->execute();
-	echo 'You have successfully registered, you can now login!';
+	
+
 } else {
+	// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
+	echo 'Could not prepare statement!';
+}
+if ($stmt = $con->prepare('SELECT id FROM users WHERE username = ?')) {
+	$stmt->bind_param('s', $_POST['rusername']);
+	$stmt->execute();
+	$stmt->store_result();
+	
+	if ($stmt->num_rows > 0) {
+		$stmt->bind_result($id);
+		$stmt->fetch();
+		session_regenerate_id();
+		$_SESSION['loggedin'] = TRUE;
+		$_SESSION['name'] = $_POST['rusername'];
+		$_SESSION['id'] = $id;
+		header('Location: form.php');
+	}
+}else {
 	// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
 	echo 'Could not prepare statement!';
 }
