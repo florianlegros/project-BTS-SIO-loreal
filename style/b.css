@@ -1,0 +1,43 @@
+            @charset "UTF-8";
+            html {
+                font-family: sans-serif;
+                line-height: 1.15;
+                -ms-text-size-adjust: 100%;
+                -webkit-text-size-adjust: 100%;
+            }
+            
+            html {
+                box-sizing: border-box;
+                font-size: 14px;
+            }
+            
+            *,
+             :after,
+             :before {
+                box-sizing: inherit;
+            }
+            
+            body {
+                margin: 0;
+                background: #03a9f414;
+                font-family: Gotham, Arial, sans-serif;
+            }
+            
+            header {
+                background: #000000;
+                margin: 0 auto;
+                min-width: 1024px;
+                clear: both;
+                border: 1px solid #d1d1d1;
+                color: #d1d1d1;
+                text-align: center;
+            }
+            
+            nav {
+                background: #ffffff;
+                color: black;
+            }
+            
+            form {
+                text-align: center;
+            }
