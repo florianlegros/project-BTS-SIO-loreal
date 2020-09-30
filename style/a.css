@@ -29,6 +29,8 @@ header {
     min-width: 1024px;
     clear: both;
     border: 1px solid #d1d1d1;
+    text-align: center;
+    height: 152px;
 }
 
 form {

@@ -19,7 +19,6 @@ html {
 
 body {
     margin: 0;
-    background: #dad4d4;
     font-family: Gotham, Arial, sans-serif;
 }
 
@@ -41,40 +40,47 @@ form {
 
 footer {
     background: #000000;
-    padding: 90px;
-    margin-top: 30%;
+    padding: 52px;
 }
 
-.produit {
-    height: fit-content;
-    display: inline-flex;
-    border-bottom: dashed;
-    padding-top: 5px;
-    padding-bottom: 10px;
+.Imag {
+    height: 50px;
 }
 
-.img {
-    position: absolute;
-    height: 15px;
+.nom {
+    margin-left: 30px;
 }
 
-.image {
-    height: 100px;
-    border-radius: 50px;
-    margin-top: 10px;
-}
-
-.desc {
-    font-size: x-small;
-}
-
-.validation {
-    text-align: center;
-    height: 35px;
+.co {
+    position: relative;
+    display: inline-block;
     border: solid;
-    font-size: x-large;
+    background-color: #69563e7a;
 }
 
-.commande {
-    display: inline-flex;
+.co .cotext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.co:hover .cotext {
+    visibility: visible;
+}
+
+.fleche {
+    margin-right: 0px;
+    padding-right: 45px;
+    padding-left: 0px;
+    width: 90px;
 }

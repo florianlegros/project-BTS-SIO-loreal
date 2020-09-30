@@ -33,48 +33,19 @@ header {
     text-align: center;
 }
 
-form {
-    text-align: center;
-    display: inline-grid;
-    padding: 200px;
-}
-
 footer {
     background: #000000;
     padding: 90px;
     margin-top: 30%;
 }
 
-.produit {
-    height: fit-content;
-    display: inline-flex;
-    border-bottom: dashed;
-    padding-top: 5px;
+.achat {
+    margin-left: 15px;
+    margin-right: 15px;
+    border-bottom: dotted;
     padding-bottom: 10px;
 }
 
-.img {
-    position: absolute;
-    height: 15px;
-}
-
 .image {
-    height: 100px;
     border-radius: 50px;
-    margin-top: 10px;
-}
-
-.desc {
-    font-size: x-small;
-}
-
-.validation {
-    text-align: center;
-    height: 35px;
-    border: solid;
-    font-size: x-large;
-}
-
-.commande {
-    display: inline-flex;
 }
