@@ -20,7 +20,7 @@
 	<div class="formulaires">
 		<div class="login">
 			<h1>Login</h1>
-			<form action="auth.php" method="post">
+			<form action="auth.php" method="post" autocomplete="off">
 				<label for="username">
 					<i class="fas fa-user"></i>
 				</label>

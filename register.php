@@ -23,7 +23,7 @@ if (preg_match('/^[a-z]+[a-z0-9]*[.-_]*$/i', $_POST['rusername']) == 0) {
 if (strlen($_POST['rpassword']) > 20 || strlen($_POST['rpassword']) < 5) {
 	exit('Password must be between 5 and 20 characters long!');
 }
-if ($stmt = $Bdd->select("id, password" ,"users" ,"username = '" . $_POST['rusername']."'")) {
+if ($stmt = $Bdd->select("id, password" ,"users" ,"WHERE username = '" . $_POST['rusername']."'")) {
 	$stmt->execute();
 	$stmt->store_result();
 	if ($stmt->num_rows > 0) {
@@ -36,7 +36,7 @@ if ($stmt = $Bdd->insert("users" ,"username,password,email" , "'" . $_POST['ruse
 } else {
 	echo 'Could not prepare statement!';
 }
-if ($stmt = $Bdd->select("id" ,"users" ,"username = '" . $_POST['rusername']."'")) {
+if ($stmt = $Bdd->select("id" ,"users" ,"WHERE username = '" . $_POST['rusername']."'")) {
 	$stmt->execute();
 	$stmt->store_result();
 	

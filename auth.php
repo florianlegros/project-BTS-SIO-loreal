@@ -12,7 +12,7 @@ if ( !isset($_POST['username'], $_POST['password']) ) {
 	exit('Please fill both the username and password fields!');
 }
 
-if ($stmt = $Bdd->select("id, password" ,"users" ,"username = '" . $_POST['username']."'")) {
+if ($stmt = $Bdd->select("id, password" ,"users" ,"WHERE username = '" . $_POST['username']."'")) {
 	$stmt->execute();
 	$stmt->store_result();
 	

@@ -16,7 +16,7 @@ class Bdd{
 
     function select($col, $tab, $condition){
         require 'config.php';
-        $result = $this->con->prepare("SELECT $col FROM $tab WHERE $condition") or die(mysqli_error($this->con)); 
+        $result = $this->con->prepare("SELECT $col FROM $tab $condition") or die(mysqli_error($this->con)); 
         return $result;
     }
     
@@ -28,7 +28,7 @@ class Bdd{
 
     function update($tble, $value, $condtion){
         require 'config.php';
-        $result = $this->con->prepare("UPDATE $tble SET $value WHERE $condtion") or die(mysqli_error($this->con));
+        $result = $this->con->prepare("UPDATE $tble SET $value $condtion") or die(mysqli_error($this->con));
         return $result;
     }
 
