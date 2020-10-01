@@ -78,3 +78,11 @@ footer {
 .commande {
     display: inline-flex;
 }
+
+.autre {
+    text-align: center;
+    height: 35px;
+    border: solid;
+    font-size: x-large;
+    background-color: #dad4d4;
+}
