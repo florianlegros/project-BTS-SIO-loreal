@@ -19,7 +19,7 @@ html {
 
 body {
     margin: 0;
-    background: #03a9f414;
+    background: #04a2eb14;
     font-family: Gotham, Arial, sans-serif;
 }
 
@@ -29,6 +29,8 @@ header {
     min-width: 1024px;
     clear: both;
     border: 1px solid #d1d1d1;
+    text-align: center;
+    height: 152px;
 }
 
 form {
@@ -45,7 +47,6 @@ form {
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 700;
-    padding-left: 53px;
     height: 40px;
     background: none;
     color: black;
@@ -55,14 +56,15 @@ form {
 .rechercher {
     margin-left: 20px;
     width: 340px;
+    border: double;
+    padding-bottom: 5px;
 }
 
 nav {
-    background: #ffffff;
+    background: #fdfdfd;
     text-align: center;
     font-family: Gotham, Arial;
-    border-bottom: 1px solid #ffffff;
-    min-height: 42px;
+    min-height: 22px;
 }
 
 .top-level {
@@ -199,14 +201,10 @@ footer>div>ul>li {
     order: 1;
 }
 
-.switch-icon {
+.icon {
     position: absolute;
-    right: 0;
-    top: 50%;
-    margin-top: -10px;
-    background-color: #000000;
 }
 
-.nav-menu-active {
-    background: #88a6b394;
+.dec {
+    color: red;
 }
