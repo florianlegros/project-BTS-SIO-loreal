@@ -1,43 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Accueil-Oréal</title>
     <link href="style/a.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 
-<body>
+<body style="background-color: #04a2eb14;">
     <header>
-        <div class="rechercher" style="padding-bottom: 40px;">
-            <form>
-                <input class="champs" placeholder="Recherche" type="text">
-                <input class="valider" type="submit" value="ok">
-            </form>
-        </div>
+        <img src="/logo/logo_loreal_paris.png" alt="Oreal" style="height: 90px;">
 
-        <nav>
-            <ul>
 
-                <li class="top-level  ">
-                    <a href="/Homme.html">
-                        <span>HOMME</span>
-                    </a>
 
-                </li>
-
-                <li class="top-level  nav-menu-active">
-                    <a href="/Femme.html">
-                        <span>FEMME</span>
-                    </a>
-
-                </li>
-
-            </ul>
-        </nav>
 
     </header>
+    <nav style="height: 51px; border-bottom: 1px solid;">
+        <ul class="row">
+            <div class="rechercher col-3" style="padding-bottom: 5px;">
+
+                <form style="width: 250px;">
+                    <input class="champs" placeholder="Recherche" type="text">
+                    <input class="valider" type="submit" value="ok">
+                </form>
+
+            </div>
+            <div class="icon col-6 offset-6" style="position: absolute;">
+
+
+
+
+
+                <img class="doss" src="/logo/ouvert.png" style="height: 40px;">
+                <img class="pan" src="/logo/panierr.png" style="height: 40px; padding-left: 60px;">
+            </div>
+            <div class="dec col-9 offset-6" style="position: absolute;">
+                <h5> Déconnexion
+                </h5>
+            </div>
+        </ul>
+    </nav>
 
     <div class="pa">
         <div class="cote">
@@ -47,14 +52,18 @@
             </a>
             <div class="choix">
                 <ul style="padding-left: 0px;">
-                    <dt class="c">Maquillage
-                        <span class="switch-icon"></span>
-                    </dt>
+                    <div>
+                        <dt class="c">Maquillage
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                        
+                        </dt>
+
+                    </div>
                     <dt class="d">Soin de la peau
-                        <span class="switch-icon"></span>
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
                     </dt>
                     <dt class="e">Cheveux
-                        <span class="switch-icon"></span>
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
                     </dt>
 
                 </ul>
@@ -945,6 +954,9 @@
             </ul>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
 </body>
 
 </html>
