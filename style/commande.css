@@ -37,3 +37,15 @@ footer {
     background: #000000;
     padding: 52px;
 }
+
+.mode {
+    text-align: -webkit-center;
+}
+
+.j {
+    margin-top: 10px;
+}
+
+.m {
+    border: groove;
+}

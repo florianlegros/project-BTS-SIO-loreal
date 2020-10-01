@@ -56,6 +56,8 @@ footer {
     display: inline-block;
     border: solid;
     background-color: #69563e7a;
+    height: 35px;
+    font-size: x-large;
 }
 
 .co .cotext {
@@ -78,9 +80,8 @@ footer {
     visibility: visible;
 }
 
-.fleche {
-    margin-right: 0px;
-    padding-right: 45px;
-    padding-left: 0px;
-    width: 90px;
+.buy {
+    text-align: center;
+    height: 35px;
+    font-size: medium;
 }
