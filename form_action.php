@@ -10,7 +10,7 @@ require "src/Bdd.php";
 if (!isset($_SESSION['loggedin'])) {
     header('Location: login.php');
 	exit;
-}else{echo $_SESSION['id'];}
+}
 
 $Bdd = new Bdd();
  
