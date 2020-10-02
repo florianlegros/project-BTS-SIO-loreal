@@ -43,6 +43,7 @@ body {
     margin-bottom: 20px;
     border-radius: 10px;
     border-style: solid;
+    background-color: #ffffff;
 }
 
 .Ajouter {
@@ -68,4 +69,8 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+}
+
+.Image-du-produit {
+    height: 200px;
 }

@@ -13,7 +13,9 @@ if (!isset($_SESSION['loggedin'])) {
     header('Location: login.php');
     exit;
 }   
-
+if(!isset($_COOKIE['panier'])){
+    setcookie("panier","[]");
+}
 if ($stmt = $Bdd->select("q1, q2, q3, q4, q5, q6, q7, q8, q9, q10" ,"formulaire" ,"WHERE users_id = '" . $_SESSION['id'] ."'")){
     $stmt->execute();
     $stmt->bind_result($q1, $q2, $q3, $q4, $q5, $q6, $q7, $q8, $q9, $q10);
@@ -138,9 +140,9 @@ if ($stmt = $Bdd->select("username, email" ,"users" ,"WHERE id = '" . $_SESSION[
         <?php
             foreach($favoris as $fav){
                 echo '<div class="bloc">
-                    <div class="Image-du-produit">
-                    <img src="img/'.$fav["image"].'.png"></img>
-                    </div>
+                    <a href="article.php?Articleid='.$fav["id"].'">
+                    <img class="Image-du-produit" src="img/'.$fav["image"].'.png"></img>
+                    </a>
                     <div class="Description">
                     <h6>'.$fav["Nom"].'</h6>
                     Prix : '.$fav["Prix"].'€
@@ -157,9 +159,9 @@ if ($stmt = $Bdd->select("username, email" ,"users" ,"WHERE id = '" . $_SESSION[
             }
             foreach($articles as $article){
                 echo '<div class="bloc">
-                    <div class="Image-du-produit">
-                    <img src="img/'.$article["image"].'.png"></img>
-                    </div>
+                    <a href="article.php?Articleid='.$article["id"].'">
+                    <img class="Image-du-produit" src="img/'.$article["image"].'.png"></img>
+                    </a>
                     <div class="Description">
                     <h6>'.$article["Nom"].'</h6>
                     Prix : '.$article["Prix"].'€

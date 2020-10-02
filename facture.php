@@ -43,7 +43,7 @@
 
 </head>
 
-<body style="background-color: #dad4d4 ;">
+<body  style="background-color: #04a2eb14;">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:#000000;">
         <a href="profile.php" style="margin:auto;"><img src="img/logo_loreal_paris.png" alt="Oreal" style="height: 90px;"></a>
     </nav>

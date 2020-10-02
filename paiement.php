@@ -47,7 +47,7 @@
                 <a target="_blank" href="https://paypal.me/Amarok00" style="margin:auto;"><img src="img/paypal.png" alt="Oreal" style="height: 90px;"></a>
         </div>
         <div style="text-align:center;">
-        <input onclick="location.href='facturation.php';" class="j" type="submit" id='submit' value='Confirmer'>
+        <input onclick="localStorage.clear();document.cookie = 'panier=[]'; location.href='facturation.php';" class="j" type="submit" id='submit' value='Confirmer'>
         <input onclick="location.href='panier.php';" class="j" type="submit" id='submit' value='Abandonner'>
         </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>

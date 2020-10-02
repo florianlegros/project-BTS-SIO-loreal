@@ -30,5 +30,6 @@ if ($stmt = $Bdd->insert("commande" ,"users_id,date,total" , "'" . $_SESSION['id
         }
     };
 }
-    
+setcookie("facture", "", time() + 1, "/");
+setcookie("panier", "", time() + 1, "/");
 header("Location: facture.php");

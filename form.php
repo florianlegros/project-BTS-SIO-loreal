@@ -29,20 +29,11 @@ if (!isset($_SESSION['loggedin'])) {
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:#000000;">
 	<a href="profile.php" style="margin:auto;"><img src="img/logo_loreal_paris.png" alt="Oreal" style="height: 90px;"></a>
 </nav>
-<header>
-        <div class="formulaire" style="padding-bottom: 40px;">
-            <h2>FORMULAIRE</h2>
 
-        </div>
-
-        <nav class="question" style="padding-bottom: 20px;">
-            <h2>Question : </h2>
-
-        </nav>
-
-
-    </header>
     <form action="form_action.php" method="post" autocomplete="off">
+                <div class="question" style="margin-top:150px;padding-bottom: 20px;">
+                    <h2>Question : </h2>
+                </div>
 
                 <div class="titre">
                     <h4>1- Quel est votre budget mensuel pour l'achat des produits ?</h4>

@@ -28,6 +28,8 @@ var app = {
             }, ];
 
             localStorage.setItem("Panier", JSON.stringify(article));
+            document.cookie = "panier=" + JSON.stringify(article);
+
         } else {
             article = [{
                 "id": idArticle,
@@ -37,9 +39,8 @@ var app = {
             Panier = Panier.concat(article);
 
             localStorage.setItem("Panier", JSON.stringify(Panier));
-
+            document.cookie = "panier=" + JSON.stringify(Panier);
         }
-        document.cookie = "panier=" + JSON.stringify(Panier);
         location.reload();
     },
 
