@@ -32,5 +32,11 @@ class Bdd{
         return $result;
     }
 
+    function delete($tble, $condtion){
+        require 'config.php';
+        $result = $this->con->prepare("DELETE FROM $tble $condtion") or die(mysqli_error($this->con));
+        return $result;
+    }
+
         
 }

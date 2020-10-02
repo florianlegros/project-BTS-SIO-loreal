@@ -5,7 +5,6 @@ ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 session_start();
 require "src/Bdd.php";
-
 $Bdd = new Bdd();
 
 if ( !isset($_POST['username'], $_POST['password']) ) {
@@ -26,12 +25,15 @@ if ($stmt->num_rows > 0) {
 		$_SESSION['loggedin'] = TRUE;
 		$_SESSION['name'] = $_POST['username'];
 		$_SESSION['id'] = $id;
+
 		header('Location: profile.php');
 	} else {
-		echo 'Incorrect password!';
+		setcookie("LoginStatus", "/!\ Mauvais mot de passe /!\ ", time() + 10, "/");
+		header('Location: login.php');
 	}
 } else {
-	echo 'Incorrect username!';
+		setcookie("LoginStatus", "/!\ Identifiant non trouvé /!\ ", time() + 10, "/");
+		header('Location: login.php');
 }
 	$stmt->close();
 }

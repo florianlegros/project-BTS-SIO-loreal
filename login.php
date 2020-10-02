@@ -17,7 +17,19 @@
 
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:#000000;">
+	<img src="img/logo_loreal_paris.png" alt="Oreal" style="height: 90px;margin:auto;">
+</nav>
+<?php
+		if($_COOKIE['LoginStatus']!=""){
+		echo "
+		<div class='alert alert-danger' role='alert' style='text-align:center;margin-top:5px;'> ".$_COOKIE['LoginStatus']." </div>
+
+		";
+		}
+	?>
 	<div class="formulaires">
+	
 		<div class="login">
 			<h1>Login</h1>
 			<form action="auth.php" method="post" autocomplete="off">
@@ -51,5 +63,6 @@
 			</form>
 		</div>
 		</div>
+		
 	</body>
 </html>

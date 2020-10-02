@@ -9,32 +9,48 @@ require "src/Bdd.php";
 $Bdd = new Bdd();
 
 if (!isset($_POST['rusername'], $_POST['rpassword'], $_POST['remail'])) {
-	exit('Please complete the registration form!');
+	setcookie("LoginStatus", "Champ manquant ", time() + 10, "/");
+	header('Location: login.php');
+	exit;
+
 }
 if (empty($_POST['rusername']) || empty($_POST['rpassword']) || empty($_POST['remail'])) {
-	exit('Please complete the registration form');
+	setcookie("LoginStatus", "Champ manquant ", time() + 10, "/");
+	header('Location: login.php');
+	exit;
+
 }
 if (!filter_var($_POST['remail'], FILTER_VALIDATE_EMAIL)) {
-	exit('Email is not valid!');
+	setcookie("LoginStatus", "Mauvais format d'email ", time() + 10, "/");
+	header('Location: login.php');
+	exit;
+
 }
-if (preg_match('/^[a-z]+[a-z0-9]*[.-_]*$/i', $_POST['rusername']) == 0) {
-    exit('Username is not valid!');
+if (preg_match('/^[a-zA-Z0-9_ \\-]+/', $_POST['rusername']) == 0) {
+    setcookie("LoginStatus", "Mauvais format d'indentifiant ", time() + 10, "/");
+	header('Location: login.php');
+	exit;
+
 }
 if (strlen($_POST['rpassword']) > 20 || strlen($_POST['rpassword']) < 5) {
-	exit('Password must be between 5 and 20 characters long!');
+	setcookie("LoginStatus", "Longeur de mot de passe incorrect", time() + 10, "/");
+	header('Location: login.php');
+	exit;
 }
 if ($stmt = $Bdd->select("id, password" ,"users" ,"WHERE username = '" . $_POST['rusername']."'")) {
 	$stmt->execute();
 	$stmt->store_result();
 	if ($stmt->num_rows > 0) {
-		echo 'Username exists, please choose another!';
+		setcookie("LoginStatus", "/!\ Identifiant existe deja /!\ ", time() + 10, "/");
+		header('Location: login.php');
 	} else {
 
 if ($stmt = $Bdd->insert("users" ,"username,password,email" , "'" . $_POST['rusername'] . "','" . password_hash($_POST['rpassword'], PASSWORD_DEFAULT) . "','" . $_POST['remail'] . "'")) {
 	$stmt->execute();
 
 } else {
-	echo 'Could not prepare statement!';
+	setcookie("LoginStatus", "Erreur serveur ", time() + 60, "/");
+	header('Location: login.php');
 }
 if ($stmt = $Bdd->select("id" ,"users" ,"WHERE username = '" . $_POST['rusername']."'")) {
 	$stmt->execute();
@@ -50,10 +66,12 @@ if ($stmt = $Bdd->select("id" ,"users" ,"WHERE username = '" . $_POST['rusername
 		header('Location: form.php');
 	}
 }else {
-	echo 'Could not prepare statement!';
+	setcookie("LoginStatus", "Erreur serveur ", time() + 60, "/");
+	header('Location: login.php');
 }
 	}
 	$stmt->close();
 } else {
-	echo 'Could not prepare statement!';
+	setcookie("LoginStatus", "Erreur serveur ", time() + 60, "/");
+	header('Location: login.php');
 }

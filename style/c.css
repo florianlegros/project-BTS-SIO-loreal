@@ -59,9 +59,9 @@ footer {
 }
 
 .image {
-    height: 100px;
+    height: 70px;
     border-radius: 50px;
-    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .desc {
