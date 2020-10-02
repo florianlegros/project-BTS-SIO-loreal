@@ -49,7 +49,7 @@
         </div>
 
         <div class="Imag col-6">
-            <img src="img/<?php echo $article['image'];?>.png" alt="Parfum" style="height: 400px;border-radius:1000px;" ;>
+            <img src="img/<?php echo $article['image'];?>" alt="Parfum" style="height: 400px;border-radius:1000px;" ;>
 
         </div>
         <div class="enplus col-6 offset-5">

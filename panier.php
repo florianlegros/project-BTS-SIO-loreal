@@ -55,7 +55,7 @@
             foreach($facture as $article){
                 echo ' <div class="produit col-7">
                 <div class="img col-3 ">
-                <img class="image" src="img/'.$article["image"].'.png" alt="Parfum ">
+                <img class="image" src="img/'.$article["image"].'" alt="Parfum ">
                 </div>
                 <div class="article col-7 ">
                 <h4>'.$article["Nom"].'</h4>

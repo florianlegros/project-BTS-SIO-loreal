@@ -135,13 +135,13 @@ if ($stmt = $Bdd->select("username, email" ,"users" ,"WHERE id = '" . $_SESSION[
     </form>
 
     </div>
-    <div class="row">
-    <div class="articles offset-2">
+    <div class="row offset-3 catalogue">
+    <div class="articles">
         <?php
             foreach($favoris as $fav){
-                echo '<div class="bloc">
+                echo '<div class="bloc col-2">
                     <a href="article.php?Articleid='.$fav["id"].'">
-                    <img class="Image-du-produit" src="img/'.$fav["image"].'.png"></img>
+                    <img class="Image-du-produit" src="img/'.$fav["image"].'"></img>
                     </a>
                     <div class="Description">
                     <h6>'.$fav["Nom"].'</h6>
@@ -158,9 +158,9 @@ if ($stmt = $Bdd->select("username, email" ,"users" ,"WHERE id = '" . $_SESSION[
             </div>';
             }
             foreach($articles as $article){
-                echo '<div class="bloc">
+                echo '<div class="bloc col-2">
                     <a href="article.php?Articleid='.$article["id"].'">
-                    <img class="Image-du-produit" src="img/'.$article["image"].'.png"></img>
+                    <img class="Image-du-produit" src="img/'.$article["image"].'"></img>
                     </a>
                     <div class="Description">
                     <h6>'.$article["Nom"].'</h6>
